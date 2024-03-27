@@ -3,7 +3,7 @@ import { BaseSeeder } from '@adonisjs/lucid/seeders';
 
 export default class extends BaseSeeder {
   async run() {
-    await System.createMany([
+    await System.fetchOrCreateMany('code', [
       {
         code: 'android_aarch64',
         name: 'Android (aarch64)',

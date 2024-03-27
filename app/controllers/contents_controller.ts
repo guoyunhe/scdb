@@ -1,3 +1,4 @@
+import Content from '#models/content';
 import type { HttpContext } from '@adonisjs/core/http';
 
 export default class ContentsController {
@@ -5,7 +6,9 @@ export default class ContentsController {
    * Return list of all posts or paginate through
    * them
    */
-  async index({ response }: HttpContext) {}
+  async index({ params }: HttpContext) {
+    return Content.query().paginate(params.page || 1, params.perPage || 10);
+  }
 
   /**
    * Handle form submission to create a new post
