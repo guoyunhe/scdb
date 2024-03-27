@@ -6,8 +6,8 @@ export default class ContentsController {
    * Return list of all posts or paginate through
    * them
    */
-  async index({ params }: HttpContext) {
-    return Content.query().paginate(params.page || 1, params.perPage || 10);
+  async index({ request }: HttpContext) {
+    return Content.query().paginate(request.input('page', '1'), request.input('perPage', '10'));
   }
 
   /**
