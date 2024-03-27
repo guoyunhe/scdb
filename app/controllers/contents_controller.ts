@@ -8,13 +8,6 @@ export default class ContentsController {
   async index({ response }: HttpContext) {}
 
   /**
-   * Render the form to create a new post.
-   *
-   * Not needed if you are creating an API server.
-   */
-  async create({}: HttpContext) {}
-
-  /**
    * Handle form submission to create a new post
    */
   async store({ request }: HttpContext) {}
@@ -23,13 +16,6 @@ export default class ContentsController {
    * Display a single post by id.
    */
   async show({ params }: HttpContext) {}
-
-  /**
-   * Render the form to edit an existing post by its id.
-   *
-   * Not needed if you are creating an API server.
-   */
-  async edit({ params }: HttpContext) {}
 
   /**
    * Handle the form submission to update a specific post by id

@@ -7,6 +7,7 @@
 |
 */
 
+import ContentsController from '#controllers/contents_controller';
 import SystemsController from '#controllers/systems_controller';
 import router from '@adonisjs/core/services/router';
 
@@ -17,3 +18,4 @@ router.get('/', async () => {
 });
 
 router.resource('systems', SystemsController);
+router.resource('contents', ContentsController);

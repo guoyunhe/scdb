@@ -1,3 +1,4 @@
+import System from '#models/system';
 import type { HttpContext } from '@adonisjs/core/http';
 
 export default class SystemsController {
@@ -5,14 +6,9 @@ export default class SystemsController {
    * Return list of all posts or paginate through
    * them
    */
-  async index({ response }: HttpContext) {}
-
-  /**
-   * Render the form to create a new post.
-   *
-   * Not needed if you are creating an API server.
-   */
-  async create({}: HttpContext) {}
+  async index() {
+    return System.query().orderBy('name', 'asc');
+  }
 
   /**
    * Handle form submission to create a new post
@@ -22,14 +18,9 @@ export default class SystemsController {
   /**
    * Display a single post by id.
    */
-  async show({ params }: HttpContext) {}
-
-  /**
-   * Render the form to edit an existing post by its id.
-   *
-   * Not needed if you are creating an API server.
-   */
-  async edit({ params }: HttpContext) {}
+  async show({ params }: HttpContext) {
+    return System.find(params.id);
+  }
 
   /**
    * Handle the form submission to update a specific post by id
